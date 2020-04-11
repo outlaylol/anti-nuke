@@ -10,5 +10,3 @@ Download to zip, extract to desktop, open cmd and use cd path/to/folder, npm ins
 
 Anti-Raid
 
-# How To Bypass
-time.sleep(2)
