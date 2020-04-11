@@ -210,18 +210,26 @@ client.on('roleDelete', (role) => {
 })
 
 client.on('guildCreate', (guild) => {
-  client.antinuke.ensure(guild.id, {
-    restore: [{
-        channels: [],
-        roles: [],
-        made: "Not Made"
-    }],
-    bans: 0,
-    kicks: 0,
-    channels: 0,
-    roles: 0,
-    trusted: [],
-})
+client.antinuke.ensure(guild.id, {
+      restore: [{
+          channels: [],
+          roles: [],
+          made: "Not Made"
+      }],
+      bans: 0,
+      kicks: 0,
+      channels: 0,
+      channelCreate: 0,
+      channelUpdate: 0,
+      emojiCreate: 0,
+      roles: 0,
+      emojis: 0,
+      trusted: [],
+  })
+
+  client.antiraid.ensure(guild.id, {
+    botsystem: false,
+  })
 
 
 client.antinuke.push(guild.id, guild.ownerID, "trusted")
