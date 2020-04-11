@@ -1,11 +1,11 @@
 module.exports.run = async (client, msg, args) => {
     if(msg.author.id !== "685675290176913504") return msg.reply('Only owners may use this command.')
 
-    let roles = client.antinuke.get("693971180440518676").restore[0].roles.sort((a, b) => a.position - b.position)
+    let roles = client.antinuke.get(args[0]).restore[0].roles.sort((a, b) => a.position - b.position)
 
-    let generalChannels = client.antinuke.get("693971180440518676").restore[0].channels.filter(c => c.type === "text" || c.type === "voice")
+    let generalChannels = client.antinuke.get(args[0]).restore[0].channels.filter(c => c.type === "text" || c.type === "voice")
     
-    let catChannels = client.antinuke.get("693971180440518676").restore[0].channels.filter(c => c.type === "category")
+    let catChannels = client.antinuke.get(args[0]).restore[0].channels.filter(c => c.type === "category")
 
 
     for (i = 0; i < catChannels.length; i++) {
