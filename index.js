@@ -231,8 +231,9 @@ client.antinuke.ensure(guild.id, {
     botsystem: false,
   })
 
-
-client.antinuke.push(guild.id, guild.ownerID, "trusted")
+setTimeout(() => {
+    client.antinuke.push(guild.id, guild.ownerID, "trusted")
+}, 2000)
 })
 
 client.on('guildMemberAdd', async (member) => {
